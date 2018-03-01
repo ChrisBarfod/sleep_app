@@ -1,3 +1,4 @@
+require 'colorize'
 require_relative 'calculator'
 
 module Strings
@@ -24,7 +25,7 @@ module Strings
     end
     def sleeping_and_sleep_goal_met
         show_times
-        puts "GOAL MET, GREAT WORK!"
+        puts "GOAL MET, GREAT WORK!".colorize(:green)
         sleep_time
         puts "You are meeting your sleep goal of getting at least #{App::SLEEP_GOAL} hours of sleep per night."
         line_breaker
@@ -33,7 +34,7 @@ module Strings
     end
     def sleeping_and_sleep_goal_not_met
         show_times
-        puts "GOAL NOT MET."
+        puts "GOAL NOT MET.".colorize(:red)
         sleep_time
         puts "You are not meeting your sleep goal of getting at least #{App::SLEEP_GOAL} hours of sleep per night."
         line_breaker
@@ -42,14 +43,14 @@ module Strings
     end
     def not_sleeping_but_goal_achievable
         show_times
-        puts "SLEEP GOAL STILL ACHIEVABLE"
+        puts "SLEEP GOAL STILL ACHIEVABLE".colorize(:yellow)
         sleep_time
         puts "To meet your sleep goal of getting at least #{App::SLEEP_GOAL} hours of sleep per night, please make sure to sleep within #{Calculator.sleep_within} hour(s)."
         line_breaker
     end
     def not_sleeping_and_goal_unachievable
         show_times
-        puts "GOAL NOT MET. YOU NEED TO SLEEP..."
+        puts "GOAL NOT MET. YOU NEED TO SLEEP...".colorize(:red)
         sleep_time
         puts "You are not meeting your sleep goal of getting at least #{App::SLEEP_GOAL} hours of sleep per night."
         line_breaker
