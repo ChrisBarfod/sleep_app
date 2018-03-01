@@ -4,8 +4,6 @@ module Calculator
     module_function
     WAKE_UP_TIME = DateTime.now.midnight + 1.days + 4.hours
     CURRENT_TIME = DateTime.now
-    #WAKE_UP_TIME = "04:00"
-    #CURRENT_TIME = "01:00"
     def calculate_sleep_time
         result = ((TimeDifference.between(WAKE_UP_TIME, CURRENT_TIME).in_hours)).to_f.round(2)
     end
